@@ -7,12 +7,12 @@ const playSound = () => {
 };
 
 const Tasbih = () => {
-	const [count, setCount] = useState(98);
+	const [count, setCount] = useState(0);
 
 	const incrementCount = () => {
 		setCount((prevCount) => {
 			const newCount = prevCount + 1;
-			if (newCount === 33 || newCount === 66 || newCount === 99) {
+			if (newCount % 33 === 0 && newCount != 0) {
 				playSound();
 			}
 			return newCount % 100;
